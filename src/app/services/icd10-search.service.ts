@@ -19,10 +19,6 @@ export class Icd10SearchService {
       `${this.apiBase}/api/search-by-description`,
       payload
     ).pipe(
-      tap(response => {
-          console.log('Full Response:', response); 
-        }
-      ),
       map(response => response.icd10codes) // Extract the icd10codes array
     );
   }

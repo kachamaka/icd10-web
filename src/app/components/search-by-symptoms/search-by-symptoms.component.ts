@@ -34,7 +34,7 @@ export class SearchBySymptomsComponent {
     this.loading = true;
     this.results = [];
 
-    this.searchService.searchByDescription(this.description?.value).subscribe(
+    this.searchService.searchBySymptoms(this.description?.value).subscribe(
       (data) => {
         console.log(data);
         if (data) {
