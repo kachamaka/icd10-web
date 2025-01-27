@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'; // Import map operator
+import { map, tap } from 'rxjs/operators'; // Import map operator
 import { Icd10SearchResult } from '../models/icd10-search-result';
 
 @Injectable({
@@ -19,6 +19,10 @@ export class Icd10SearchService {
       `${this.apiBase}/api/search-by-description`,
       payload
     ).pipe(
+      tap(response => {
+          console.log('Full Response:', response); 
+        }
+      ),
       map(response => response.icd10codes) // Extract the icd10codes array
     );
   }
