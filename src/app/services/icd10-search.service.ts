@@ -8,7 +8,7 @@ import { Icd10SearchResult } from '../models/icd10-search-result';
   providedIn: 'root'
 })
 export class Icd10SearchService {
-  private apiBase = 'http://localhost:8080'; // Replace with your actual API base URL
+  private apiBase = 'http://16.171.249.214:8080'; // Replace with your actual API base URL
 
   constructor(private http: HttpClient) {}
 
