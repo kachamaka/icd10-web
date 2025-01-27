@@ -8,8 +8,8 @@ import { Icd10SearchResult } from '../models/icd10-search-result';
   providedIn: 'root'
 })
 export class Icd10SearchService {
-  private apiBase = 'http://16.171.177.148:8080'; // Replace with your actual API base URL
-  // private apiBase = 'https://5xsmx2omy8.execute-api.eu-north-1.amazonaws.com'; 
+  // private apiBase = 'http://16.171.177.148:8080'; // Replace with your actual API base URL
+  private apiBase = 'https://dcezhyil02.execute-api.eu-north-1.amazonaws.com'; 
 
   constructor(private http: HttpClient) {}
 
