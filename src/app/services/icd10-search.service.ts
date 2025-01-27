@@ -8,14 +8,15 @@ import { Icd10SearchResult } from '../models/icd10-search-result';
   providedIn: 'root'
 })
 export class Icd10SearchService {
-  private apiBase = 'http://16.171.249.214:8080'; // Replace with your actual API base URL
+  // private apiBase = 'http://16.171.249.214:8080'; // Replace with your actual API base URL
 
   constructor(private http: HttpClient) {}
 
   searchByDescription(description: string): Observable<Icd10SearchResult[]> {
     const payload = { query: description }; // JSON body
     return this.http.post<{ icd10codes: Icd10SearchResult[] }>(
-      `${this.apiBase}/search-by-description`,
+      // `${this.apiBase}/api/search-by-description`,
+      `/api/search-by-description`,
       payload
     ).pipe(
       map(response => response.icd10codes) // Extract the icd10codes array
@@ -25,7 +26,8 @@ export class Icd10SearchService {
   searchBySymptoms(symptoms: string): Observable<Icd10SearchResult[]> {
     const payload = { query: symptoms }; // JSON body
     return this.http.post<{ icd10codes: Icd10SearchResult[] }>(
-      `${this.apiBase}/search-by-symptoms`,
+      // `${this.apiBase}/api/search-by-symptoms`,
+      `/api/search-by-symptoms`,
       payload
     ).pipe(
       map(response => response.icd10codes) // Extract the icd10codes array
