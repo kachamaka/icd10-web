@@ -4,7 +4,7 @@
     <form (ngSubmit)="search()" [formGroup]="searchForm">
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Enter Symptoms Description</mat-label>
-        <input matInput formControlName="description" placeholder="e.g., Cholera">
+        <input matInput formControlName="description" placeholder="e.g., I have a sore throat, runny nose, sneezing, and mild fever.">
         <mat-error *ngIf="description?.invalid && description?.touched">
           Description is required.
         </mat-error>
